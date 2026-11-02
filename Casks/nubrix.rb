@@ -1,6 +1,6 @@
 cask "nubrix" do
-  version "0.1.0"
-  sha256 "7c38d72a621aefba5ad05cb6a8189669d4003d251b8c8251de814de19eac56bd"
+  version "0.1.1"
+  sha256 "cd0f739c78e543eb0ff27e47fb706f93742a608b44c0579e4ba390c9677752cf"
 
   url "https://github.com/murathanbakti/nubrix/releases/download/v#{version}/Nubrix-#{version}.zip"
   name "Nubrix"
@@ -16,10 +16,6 @@ cask "nubrix" do
 
   app "Nubrix.app"
 
-  postflight_steps do
-    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Nubrix.app"]
-  end
-
   uninstall quit: "dev.nubrix.app"
 
   zap trash: [
@@ -30,15 +26,6 @@ cask "nubrix" do
   ]
 
   caveats <<~EOS
-    This cask removes the macOS quarantine flag from Nubrix.app after installing it,
-    so the first launch is not blocked. The cost: Gatekeeper skips Apple's malware
-    check for this app, and you trust this tap and its GitHub release instead.
-
-    If macOS still says "Nubrix" was blocked, click "Done" in that dialog,
-    never "Move to Trash" (that deletes the app). Then run
-      open "x-apple.systempreferences:com.apple.settings.PrivacySecurity.extension"
-    and click "Open Anyway" next to the Nubrix message.
-
     Optional Claude Code hooks (session status in the notch):
       bash "#{appdir}/Nubrix.app/Contents/Resources/nubrix-hooks/scripts/install-hooks.sh"
     The script prints a snippet to add to ~/.claude/settings.json and never edits that file.
