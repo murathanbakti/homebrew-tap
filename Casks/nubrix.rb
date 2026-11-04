@@ -1,6 +1,6 @@
 cask "nubrix" do
-  version "0.2.0"
-  sha256 "7244cf09c9d81eb5128020015ff8728fca77ab9a2132db89dd9181855e126b19"
+  version "0.3.0"
+  sha256 "5712f7708899d6b70ccc15e9a54ea7dee2200e465fa2a67fca13e66fb58821af"
 
   url "https://github.com/murathanbakti/nubrix/releases/download/v#{version}/Nubrix-#{version}.zip"
   name "Nubrix"
@@ -31,7 +31,7 @@ cask "nubrix" do
     The script prints a snippet to add to ~/.claude/settings.json and never edits that file.
     Run it again after every upgrade to refresh the installed copies.
 
-    Nubrix can also update itself if you turn that on in Settings, About, Updates.
+    Nubrix also updates itself by default; turn that off in Settings, About, Updates.
     brew upgrade --cask nubrix keeps working either way.
 
     Before "brew uninstall --zap nubrix", remove the Nubrix entries from
