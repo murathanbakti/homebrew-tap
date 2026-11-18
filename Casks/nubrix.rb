@@ -1,6 +1,6 @@
 cask "nubrix" do
-  version "0.5.3"
-  sha256 "bea85bbab14ef1851d9f902673e7b2a158d35acad370a9b1b90f78e1c3ebc15a"
+  version "0.5.4"
+  sha256 "7dbb653dec45f76775d5ee74c815f98c82e34fb4f567d52424b7837e7a18819b"
 
   url "https://github.com/murathanbakti/nubrix/releases/download/v#{version}/Nubrix-#{version}.zip"
   name "Nubrix"
